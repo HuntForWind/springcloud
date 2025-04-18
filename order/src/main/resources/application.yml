@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: order
+server:
+  port: 8085
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/  # 设置Eureka服务器的地址，用于服务发现与注册

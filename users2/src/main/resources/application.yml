@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: users
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+server:
+  port: 8083
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/  # 设置Eureka服务器的地址，用于服务发现与注册
+  instance:
+    instance-id: users2
+
