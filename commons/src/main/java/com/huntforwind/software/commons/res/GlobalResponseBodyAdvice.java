@@ -3,7 +3,6 @@ package com.huntforwind.software.commons.res;
 import cn.hutool.json.JSONUtil;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.core.MethodParameter;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.server.ServerHttpRequest;
@@ -14,7 +13,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import java.util.Objects;
 
-@Order(9999)
 @RestControllerAdvice
 public class GlobalResponseBodyAdvice implements ResponseBodyAdvice<Object> {
     @Override
