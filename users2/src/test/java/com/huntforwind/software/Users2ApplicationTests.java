@@ -1,4 +1,4 @@
-package com.huntforwind.software.users;
+package com.huntforwind.software;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
