@@ -1,6 +1,7 @@
 package com.huntforwind.software.commons.res;
 
 import cn.hutool.json.JSONUtil;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
@@ -13,8 +14,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 import java.util.Objects;
 
+@Hidden
 @RestControllerAdvice
 public class GlobalResponseBodyAdvice implements ResponseBodyAdvice<Object> {
+
     @Override
     public boolean supports(@NotNull MethodParameter returnType,
                             @NotNull Class<? extends HttpMessageConverter<?>> converterType) {
@@ -39,13 +42,6 @@ public class GlobalResponseBodyAdvice implements ResponseBodyAdvice<Object> {
         if (Objects.requireNonNull(request.getHeaders().get("user-agent")).get(0).startsWith("Java")) {
             return body;
         }
-
-//        // 以下代码主要解决和 Swagger 的冲突
-//        if (body instanceof ResponseStructure || body instanceof Json || body instanceof UiConfiguration ||
-//                (body instanceof ArrayList && !((ArrayList<?>) body).isEmpty() &&
-//                        ((ArrayList<?>) body).get(0) instanceof SwaggerResource)) {
-//            return body;
-//        }
 
         ResponseStructure<Object> responseStructure;
 
