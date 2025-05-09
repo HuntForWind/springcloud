@@ -55,11 +55,6 @@
             <version>5.8.37</version>
         </dependency>
         <dependency>
-            <groupId>com.huntforwind.software</groupId>
-            <artifactId>commons</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.6.0</version>
@@ -85,6 +80,11 @@
                 <scope>import</scope>
             </dependency>
             <!--spring-cloud-alibaba-->
+            <dependency>
+                <groupId>com.huntforwind.software</groupId>
+                <artifactId>commons</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
