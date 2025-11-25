@@ -1,5 +1,6 @@
 package com.huntforwind.software.users.service.impl;
 
+import cn.hutool.core.collection.ListUtil;
 import com.huntforwind.software.users.bean.LoginUser;
 import com.huntforwind.software.users.bean.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         user.setId(1);
         user.setUsername("HuntForWind");
         user.setPassword(passwordEncoder.encode("310318"));
-        return new LoginUser(user);
+        return new LoginUser(user, ListUtil.toList("first", "last"));
     }
 }
